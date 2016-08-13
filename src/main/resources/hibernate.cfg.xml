@@ -23,6 +23,7 @@
         <property name="hbm2ddl.auto">update</property>
         
   		<mapping resource="Student.hbm.xml"/>
+        <mapping class="cn.ipay.model.Teacher"/>
 
     </session-factory>
 
