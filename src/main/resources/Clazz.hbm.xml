@@ -5,13 +5,12 @@
 
 <hibernate-mapping package="cn.ipay.model">
 
-	<class name="Student" table="t_student">
-		<id name="id" column="stuId">
+	<class name="Clazz" table="t_clazz">
+		<id name="id" column="clazzId">
 			<generator class="native"></generator>
 		</id>
 		
-		<property name="name" column="stuName"></property>
-		<many-to-one name="clazz" column="claId" class="cn.ipay.model.Clazz"/>
+		<property name="name" column="clazzName"></property>
 	</class>
 
 </hibernate-mapping>

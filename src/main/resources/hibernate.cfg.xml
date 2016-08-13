@@ -24,6 +24,7 @@
         
   		<mapping resource="Student.hbm.xml"/>
         <mapping class="cn.ipay.model.Teacher"/>
+        <mapping resource="Clazz.hbm.xml"/>
 
     </session-factory>
 

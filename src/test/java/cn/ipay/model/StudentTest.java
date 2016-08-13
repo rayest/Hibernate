@@ -20,14 +20,14 @@ public class StudentTest {
     private Transaction transaction;
 
     @Before
-    public void init() {
+    public void setUp() {
         sessionFactory = HibernateUtil.getSessionFactory();
         session = sessionFactory.openSession();
         transaction = session.beginTransaction();
     }
 
     @After
-    public void after() {
+    public void tearDown() {
         transaction.commit();
         session.close();
         sessionFactory.close();
@@ -35,9 +35,22 @@ public class StudentTest {
 
     @Test
     public void testAddStudent() {
-        Student student = new Student();
-        student.setName("Lee");
-        session.save(student);
+
+        Clazz clazz = new Clazz();
+        clazz.setName("freshman");
+        session.save(clazz);
+
+        Student student1 = new Student();
+        student1.setName("ray");
+        student1.setClazz(clazz);
+
+        Student student2 = new Student();
+        student2.setName("pay");
+        student2.setClazz(clazz);
+
+        session.save(student1);
+        session.save(student2);
+
     }
 
     @Test
