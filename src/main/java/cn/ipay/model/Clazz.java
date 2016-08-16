@@ -1,9 +1,13 @@
 package cn.ipay.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Clazz {
 
 	private long id;
 	private String name;
+	private Set<Student> students = new HashSet<Student>();
 	
 	public long getId() {
 		return id;
@@ -16,6 +20,14 @@ public class Clazz {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(Set<Student> students) {
+		this.students = students;
 	}
 
 	@Override

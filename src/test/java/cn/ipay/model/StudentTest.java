@@ -9,7 +9,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Rayest on 2016/8/13 0013.
@@ -73,6 +75,33 @@ public class StudentTest {
         List<Student> students = query.list();
         for (Student student : students){
             System.out.println(student);
+        }
+    }
+
+    @Test
+    public void testSaveClazzAndStudent(){
+        Clazz clazz = new Clazz();
+        clazz.setName("Junior");
+
+        Student student1 = new Student();
+        student1.setName("Payest");
+        Student student2 = new Student();
+        student2.setName("Paris Sweety");
+
+        clazz.getStudents().add(student1);
+        clazz.getStudents().add(student2);
+
+        session.save(clazz);
+
+    }
+
+    @Test
+    public void getStudentsByClazz(){
+        Clazz clazz = (Clazz) session.get(Clazz.class, Long.valueOf(4));
+        Set<Student> students = clazz.getStudents();
+        Iterator iterator = students.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
         }
     }
 

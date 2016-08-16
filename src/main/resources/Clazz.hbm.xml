@@ -9,8 +9,11 @@
 		<id name="id" column="clazzId">
 			<generator class="native"></generator>
 		</id>
-		
 		<property name="name" column="clazzName"></property>
+		<set name="students" cascade="save-update">
+			<key column="clazzId"></key>
+			<one-to-many class="cn.ipay.model.Student"></one-to-many>
+		</set>
 	</class>
 
 </hibernate-mapping>
