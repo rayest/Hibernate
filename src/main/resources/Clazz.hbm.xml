@@ -10,7 +10,7 @@
 			<generator class="native"></generator>
 		</id>
 		<property name="name" column="clazzName"></property>
-		<set name="students" cascade="save-update">
+		<set name="students" cascade="save-update" inverse="true">
 			<key column="clazzId"></key>
 			<one-to-many class="cn.ipay.model.Student"></one-to-many>
 		</set>

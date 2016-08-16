@@ -105,5 +105,22 @@ public class StudentTest {
         }
     }
 
+    @Test
+    public void testAddWithoutInverse(){
+        Clazz clazz = new Clazz();
+        clazz.setName("senior");
+        Student student = new Student();
+        student.setName("Candy");
+        session.save(clazz);
+        session.save(student);
+    }
+
+    @Test
+    public void testAddWithInverse(){
+        Clazz clazz = (Clazz) session.get(Clazz.class, Long.valueOf(4));
+        Student student = (Student) session.get(Student.class, Long.valueOf(1));
+        student.setClazz(clazz);
+        clazz.getStudents().add(student);
+    }
 
 }
