@@ -123,4 +123,11 @@ public class StudentTest {
         clazz.getStudents().add(student);
     }
 
+    // 级联删除，需要选择 cascade 属性为 delete，否则有外键关联的属性不允许删除
+    @Test
+    public void testDeleteClazzCascade(){
+        Clazz clazz = (Clazz) session.get(Clazz.class, Long.valueOf(4));
+        session.delete(clazz);
+    }
+
 }
