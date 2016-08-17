@@ -22,9 +22,12 @@
         <!-- 自动更新表结构 -->
         <property name="hbm2ddl.auto">update</property>
         
-  		<mapping resource="Student.hbm.xml"/>
-        <mapping class="cn.ipay.model.Teacher"/>
-        <mapping resource="Clazz.hbm.xml"/>
+  		<mapping resource="Student.hbm.xml" />
+        <mapping class="cn.ipay.model.Teacher" />
+        <mapping resource="Clazz.hbm.xml" />
+        <mapping resource="Node.hbm.xml" />
+        <mapping resource="Book.hbm.xml" />
+        <mapping resource="Lover.hbm.xml" />
 
     </session-factory>
 
